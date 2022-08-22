@@ -101,4 +101,5 @@ fs.writeFile("./index.html", generatePage(name, github), (err) => {
 });
 */
 
-//ပြောင်းလဲဖြစ်စဥ်-7
+//Step-3
+//Prompt user for more input
