@@ -10,8 +10,8 @@ const questions = [
     type: "input",
     name: "title",
     message: "What is the title of your project? (Required)",
-    validate: (nameInput) => {
-      if (nameInput) {
+    validate: (စာရိုက်ပါ) => {
+      if (စာရိုက်ပါ) {
         return true;
       } else {
         console.log("You need to enter a project name!");
@@ -35,7 +35,7 @@ const questions = [
   {
     type: "checkbox",
     name: "languages",
-    message: "What did you this project with? (Check all that apply)",
+    message: "What did you make this project with? (Check all that apply)",
     choices: [
       "JavaScript",
       "HTML",
@@ -59,40 +59,49 @@ const questions = [
       }
     },
   },
-  {
-    type: "confirm",
-    name: "feature",
-    message: "Would you like to feature this project?",
-    default: false,
-  },
-  {
-    type: "confirm",
-    name: "confirmAddProject",
-    message: "Would you like to enter another project?",
-    default: false,
-  },
+  // {
+  //   type: "confirm",
+  //   name: "feature",
+  //   message: "Would you like to feature this project?",
+  //   default: false,
+  // },
+  // {
+  //   type: "confirm",
+  //   name: "confirmAddProject",
+  //   message: "Would you like to enter another project?",
+  //   default: false,
+  // },
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(data) {
-  console.log(data);
+function writeToFile(အချက်အလက်) {
+  console.log(အချက်အလက်);
 
-  let content = "";
+  let language = "";
+  if (အချက်အလက်.languages) {
+    အချက်အလက်.languages.forEach(function (value, index) {
+      let number = Number(index) + 1;
+      language += number + ". " + value + "<br>";
+    });
+  }
 
   let fileTxt = `
 
   ## Title
-  ${data.title}
+  ${အချက်အလက်.title}
+
+  ## Description
+  ${အချက်အလက်.description}
+
+  ## Languages
+  ${language}
 
   ## Link
-  ${data.link}
+  ${အချက်အလက်.link}
   
-  ## Description
-  ${data.description}
- ​
   `;
 
-  fs.writeFile(`./readme/${data.title}.md`, fileTxt, function (err) {
+  fs.writeFile(`./readme/${အချက်အလက်.title}.md`, fileTxt, function (err) {
     if (err) {
       console.log(err);
       throw err;
@@ -102,7 +111,7 @@ function writeToFile(data) {
   });
 }
 
-const readmeProjectData = { objects: [] };
+// const readmeProjectData = { objects: [] };
 
 const promptQuestions = () => {
   return inquirer
