@@ -68,9 +68,7 @@ const questions = [
     type: "checkbox",
     name: "walkthrough_video",
     message: "Walkthrough Video of the project",
-    choices: [
-      "![walk-through](https://github.com/Minmaung0307/professional-readme_generator/blob/f16c46acd2dd616dfcb1ea80976d9942d9d4c285/images:movies/readme.mp4)",
-    ],
+    choices: ["![walk-through](https://youtu.be/Gu9yie0S41I)"],
   },
   {
     type: "checkbox",
