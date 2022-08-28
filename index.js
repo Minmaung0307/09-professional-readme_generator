@@ -1,7 +1,6 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const path = require("path");
-// const axios = require("axios");
 const inquirer = require("inquirer");
 
 // TODO: Create an array of questions for user input
@@ -23,8 +22,8 @@ const questions = [
     type: "input",
     name: "description",
     message: "Provide a description of the project (Required)",
-    validate: (descriptionInput) => {
-      if (descriptionInput) {
+    validate: (အကျဥ်းချုပ်) => {
+      if (အကျဥ်းချုပ်) {
         return true;
       } else {
         console.log("You need to enter a project description!");
@@ -59,18 +58,29 @@ const questions = [
       }
     },
   },
-  // {
-  //   type: "confirm",
-  //   name: "feature",
-  //   message: "Would you like to feature this project?",
-  //   default: false,
-  // },
-  // {
-  //   type: "confirm",
-  //   name: "confirmAddProject",
-  //   message: "Would you like to enter another project?",
-  //   default: false,
-  // },
+  {
+    type: "checkbox",
+    name: "screenshot",
+    message: "Screenshot/s of the project",
+    choices: [
+      "images/password-generator.png",
+      "images/quiz-exam.png",
+      "images/runbuddy.png",
+      "images/workday-scheduler.png",
+    ],
+  },
+  {
+    type: "confirm",
+    name: "feature",
+    message: "Would you like to feature this project?",
+    default: false,
+  },
+  {
+    type: "confirm",
+    name: "confirmAddProject",
+    message: "Would you like to enter another project?",
+    default: false,
+  },
 ];
 
 // TODO: Create a function to write README file
@@ -87,7 +97,7 @@ function writeToFile(အချက်အလက်) {
 
   let fileTxt = `
 
-  ## Title
+  # Title
   ${အချက်အလက်.title}
 
   ## Description
@@ -98,6 +108,9 @@ function writeToFile(အချက်အလက်) {
 
   ## Link
   ${အချက်အလက်.link}
+
+  ## Screenshot
+  ${အချက်အလက်.screenshot}
   
   `;
 
