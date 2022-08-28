@@ -63,6 +63,7 @@ const questions = [
     name: "screenshot",
     message: "Screenshot/s of the project",
     choices: [
+      "![screenshot]()"
       "![password-generator](https://github.com/Minmaung0307/professional-readme_generator/blob/404ac8412adba13b5de1992c3f56b9353ac1a891/images/password-generator.png)",
 
       "![Quiz-exam](https://github.com/Minmaung0307/professional-readme_generator/blob/d28b6ed3a41428d87705df825517eb734127710d/images/quiz-exam.png)",
@@ -76,12 +77,6 @@ const questions = [
     type: "confirm",
     name: "feature",
     message: "Would you like to feature this project?",
-    default: false,
-  },
-  {
-    type: "confirm",
-    name: "confirmAddProject",
-    message: "Would you like to enter another project?",
     default: false,
   },
 ];
@@ -98,7 +93,17 @@ function writeToFile(အချက်အလက်) {
     });
   }
 
+  // let content = "";
+  // if (အချက်အလက်.contents) {
+  //   အချက်အလက်.contents.forEach(function (value, index) {
+  //     let number = Number(index) + 1;
+  //     content += number + ". " + value + "<br>";
+  //   });
+  // }
+
   let fileTxt = `
+  # Contents
+  ${အချက်အလက်.content}
 
   # Title
   ${အချက်အလက်.title}
