@@ -64,8 +64,12 @@ const questions = [
     message: "Screenshot/s of the project",
     choices: [
       "![password-generator](https://github.com/Minmaung0307/professional-readme_generator/blob/404ac8412adba13b5de1992c3f56b9353ac1a891/images/password-generator.png)",
-      "images/runbuddy.png",
-      "images/workday-scheduler.png",
+
+      "![Quiz-exam](https://github.com/Minmaung0307/professional-readme_generator/blob/d28b6ed3a41428d87705df825517eb734127710d/images/quiz-exam.png)",
+
+      "![Runbuddy](https://github.com/Minmaung0307/professional-readme_generator/blob/d28b6ed3a41428d87705df825517eb734127710d/images/runbuddy.png)",
+
+      "![Workday-scheduler](https://github.com/Minmaung0307/professional-readme_generator/blob/d28b6ed3a41428d87705df825517eb734127710d/images/workday-scheduler.png)",
     ],
   },
   {
@@ -110,6 +114,12 @@ function writeToFile(အချက်အလက်) {
 
   ## Screenshot
   ${အချက်အလက်.screenshot}
+
+  ## Feature
+  ${အချက်အလက်.feature}
+
+  ## AddProject
+  ${အချက်အလက်.confirmAddProject}
   
   `;
 
