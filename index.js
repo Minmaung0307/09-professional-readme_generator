@@ -59,6 +59,12 @@ const questions = [
     },
   },
   {
+    type: "confirm",
+    name: "feature",
+    message: "Would you like to feature this project?",
+    default: false,
+  },
+  {
     type: "checkbox",
     name: "screenshot",
     message: "Screenshot/s of the project",
@@ -73,12 +79,6 @@ const questions = [
 
       // "![Workday-scheduler](https://github.com/Minmaung0307/professional-readme_generator/blob/d28b6ed3a41428d87705df825517eb734127710d/images/workday-scheduler.png)",
     ],
-  },
-  {
-    type: "confirm",
-    name: "feature",
-    message: "Would you like to feature this project?",
-    default: false,
   },
 ];
 
@@ -116,11 +116,11 @@ function writeToFile(အချက်အလက်) {
   ## Link
   ${အချက်အလက်.link}
 
-  ## Screenshot
-  ${အချက်အလက်.screenshot}
-
   ## Feature
   ${အချက်အလက်.feature}
+
+  ## Screenshot
+  ${အချက်အလက်.screenshot}
 
   `;
 
