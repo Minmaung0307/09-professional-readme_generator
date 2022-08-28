@@ -63,8 +63,7 @@ const questions = [
     name: "screenshot",
     message: "Screenshot/s of the project",
     choices: [
-      "![screenshot](images/password-generator.png)",
-      "![screenshot](images/quiz-exam.png)",
+      "https://github.com/Minmaung0307/professional-readme_generator/blob/404ac8412adba13b5de1992c3f56b9353ac1a891/images/password-generator.png",
       "images/runbuddy.png",
       "images/workday-scheduler.png",
     ],
