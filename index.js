@@ -66,6 +66,14 @@ const questions = [
   },
   {
     type: "checkbox",
+    name: "walk-through_video",
+    message: "Screenshot/s of the project",
+    choices: [
+      "![walk-through](https://github.com/Minmaung0307/professional-readme_generator/blob/30757d803f7e6c5da736378a603a6747abc466f7/images/readme.png)",
+    ],
+  },
+  {
+    type: "checkbox",
     name: "screenshot",
     message: "Screenshot/s of the project",
     choices: [
@@ -118,6 +126,9 @@ function writeToFile(အချက်အလက်) {
 
   ## Feature
   ${အချက်အလက်.feature}
+
+  ## Walk-Through
+  ${အချက်အလက်.walk - through_video}
 
   ## Screenshot
   ${အချက်အလက်.screenshot}
