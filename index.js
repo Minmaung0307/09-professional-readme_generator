@@ -63,8 +63,8 @@ const questions = [
     name: "screenshot",
     message: "Screenshot/s of the project",
     choices: [
-      "images/password-generator.png",
-      "images/quiz-exam.png",
+      "![screenshot](images/password-generator.png)",
+      "![screenshot](images/quiz-exam.png)",
       "images/runbuddy.png",
       "images/workday-scheduler.png",
     ],
