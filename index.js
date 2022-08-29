@@ -73,7 +73,7 @@ const questions = [
   {
     type: "input",
     name: "video",
-    message: "add a relative path of your project video",
+    message: "Add your youtube link here!",
   },
   {
     type: "checkbox",
@@ -131,8 +131,7 @@ function writeToFile(အချက်အလက်) {
   ${အချက်အလက်.feature}
 
   ## Walk-Through
-  <video width="320" height="240" controls>
-  <source src="${အချက်အလက်.video}" type="video/mp4"></video>
+  [![Click this link to watch video]](${အချက်အလက်.video})
 
   ## Screenshot
   ${အချက်အလက်.screenshot}
