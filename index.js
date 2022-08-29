@@ -73,7 +73,7 @@ const questions = [
   {
     type: "input",
     name: "video",
-    message: "add project video",
+    message: "add a path of your project video",
   },
   {
     type: "checkbox",

@@ -1,24 +1,27 @@
+# Title
 
+MinZaw
 
-  # Title
-  MinZaw
+## Description
 
-  ## Description
-  Hello
+Hello
 
-  ## Languages
-  1. JavaScript<br>
+## Languages
 
-  ## Link
-  google.com
+1. JavaScript<br>
 
-  ## Feature
-  true
+## Link
 
-  ## Walk-Through
+google.com
+
+## Feature
+
+true
+
+## Walk-Through
+
   <video width="320" height="240" controls>
-  <source src="./images:movies/readme.mp4" type="video/mp4"></video>
+  <source src="readme.mp4" type="video/mp4"></video>
+## Screenshot
 
-  ## Screenshot
-  ![screenshot](https://github.com/Minmaung0307/professional-readme_generator/blob/30757d803f7e6c5da736378a603a6747abc466f7/images/readme.png)
-  
+![screenshot](https://github.com/Minmaung0307/professional-readme_generator/blob/30757d803f7e6c5da736378a603a6747abc466f7/images/readme.png)
