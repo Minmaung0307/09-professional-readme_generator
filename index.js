@@ -68,9 +68,7 @@ const questions = [
     type: "checkbox",
     name: "video",
     message: "Walkthrough Video of the project",
-    choices: [
-      "![movie](https://drive.google.com/file/d/1k7oFR6dZ0lN8nATlSCf3FfvLyZhxrgQl/preview)",
-    ],
+    choices: ["![movie](http://www.google.com)"],
   },
   {
     type: "checkbox",
