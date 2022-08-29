@@ -20,11 +20,11 @@ true
 
 ## Walk-Through
 
-[![Demo CountPages alpha](https://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
+[![Demo CountPages alpha]](https://www.youtube.com/watch?v=ek1j272iAmc)
 
-[](https://www.youtube.com/watch?v=Hc79sDi3f0U "Now in Android: 55")
+<!--[](https://www.youtube.com/watch?v=Hc79sDi3f0U "Now in Android: 55")
 
-[![Watch the video]](https://www.youtube.com/watch?v=HUBNt18RFbo)
+[![Watch the video]](https://www.youtube.com/watch?v=HUBNt18RFbo)-->
 
 ## Screenshot
 
