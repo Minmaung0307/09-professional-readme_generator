@@ -59,21 +59,14 @@ const questions = [
     },
   },
   {
-    type: "confirm",
+    type: "input",
     name: "feature",
-    message: "Would you like to feature this project?",
-    default: false,
-  },
-  {
-    type: "confirm",
-    name: "addNewProject",
-    message: "Would you like to add a new project?",
-    default: false,
+    message: "Would you like to add feature of this project?",
   },
   {
     type: "input",
     name: "video",
-    message: "Add your youtube link here!",
+    message: "Add your youtube video link here!",
   },
   {
     type: "checkbox",
@@ -81,14 +74,6 @@ const questions = [
     message: "Screenshot/s of the project",
     choices: [
       "![screenshot](https://github.com/Minmaung0307/professional-readme_generator/blob/30757d803f7e6c5da736378a603a6747abc466f7/images/readme.png)",
-
-      // "![password-generator](https://github.com/Minmaung0307/professional-readme_generator/blob/404ac8412adba13b5de1992c3f56b9353ac1a891/images/password-generator.png)",
-
-      // "![Quiz-exam](https://github.com/Minmaung0307/professional-readme_generator/blob/d28b6ed3a41428d87705df825517eb734127710d/images/quiz-exam.png)",
-
-      // "![Runbuddy](https://github.com/Minmaung0307/professional-readme_generator/blob/d28b6ed3a41428d87705df825517eb734127710d/images/runbuddy.png)",
-
-      // "![Workday-scheduler](https://github.com/Minmaung0307/professional-readme_generator/blob/d28b6ed3a41428d87705df825517eb734127710d/images/workday-scheduler.png)",
     ],
   },
 ];
@@ -104,14 +89,6 @@ function writeToFile(အချက်အလက်) {
       language += number + ". " + value + "<br>";
     });
   }
-
-  // let content = "";
-  // if (အချက်အလက်.contents) {
-  //   အချက်အလက်.contents.forEach(function (value, index) {
-  //     let number = Number(index) + 1;
-  //     content += number + ". " + value + "<br>";
-  //   });
-  // }
 
   let fileTxt = `
 
@@ -147,18 +124,15 @@ function writeToFile(အချက်အလက်) {
   });
 }
 
-// const readmeProjectData = { objects: [] };
-
 const promptQuestions = () => {
-  return inquirer
-    .prompt(questions)
-    .then((projectData) => {
-      console.log(projectData);
-      return projectData;
-    })
-    .then((data) => {
-      writeToFile(data);
-    });
+  return (
+    inquirer
+      .prompt(questions)
+      .then((data) => {
+        console.log(data);
+        writeToFile(data);
+      })
+  );
 };
 
 // TODO: Create a function to initialize app
@@ -168,26 +142,3 @@ function init() {
 
 // Function call to initialize app
 init();
-
-/*
-//var-နဲ့ရေးဟန်
-var profileDataArgs = process.argv.slice(2, process.argv.length);
-console.log(profileDataArgs);
-
-//const-နဲ့ရေးဟန်
-const profileDataArgs = process.argv.slice(2, process.argv.length);
-console.log(profileDataArgs);
-
-//arrow-နဲ့ရေးဟန်-1
-const printProfileData = (profileDataArr) => {
-  console.log(profileDataArr);
-};
-
-//arrow-နဲ့ရေးဟန်-2
-const printProfileData = profileDataArr => {
-  console.log(profileDataArr);
-};
-
-printProfileData(profileDataArgs);
-*/
-// Notice the lack of parentheses around the `profileDataArr` parameter?
