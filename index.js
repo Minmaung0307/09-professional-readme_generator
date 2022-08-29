@@ -65,10 +65,15 @@ const questions = [
     default: false,
   },
   {
-    type: "checkbox",
+    type: "confirm",
+    name: "addNewProject",
+    message: "Would you like to add a new project?",
+    default: false,
+  },
+  {
+    type: "input",
     name: "video",
-    message: "Walkthrough Video of the project",
-    choices: ["![movie](http://www.google.com)"],
+    message: "add project video",
   },
   {
     type: "checkbox",
@@ -126,11 +131,11 @@ function writeToFile(အချက်အလက်) {
   ${အချက်အလက်.feature}
 
   ## Walk-Through
-  ${အချက်အလက်.video}
+  <video width="320" height="240" controls>
+  <source src="${အချက်အလက်.video}" type="video/mp4"></video>
 
   ## Screenshot
   ${အချက်အလက်.screenshot}
-
   `;
 
   fs.writeFile(`./readme/${အချက်အလက်.title}.md`, fileTxt, function (err) {
