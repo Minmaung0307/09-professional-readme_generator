@@ -66,9 +66,11 @@ const questions = [
   },
   {
     type: "checkbox",
-    name: "walkthrough_video",
+    name: "video",
     message: "Walkthrough Video of the project",
-    choices: ["![walk-through](https://youtu.be/Gu9yie0S41I)"],
+    choices: [
+      "![movie](https://drive.google.com/file/d/1k7oFR6dZ0lN8nATlSCf3FfvLyZhxrgQl/preview)",
+    ],
   },
   {
     type: "checkbox",
@@ -126,7 +128,7 @@ function writeToFile(အချက်အလက်) {
   ${အချက်အလက်.feature}
 
   ## Walk-Through
-  ${အချက်အလက်.walkthrough_video}
+  ${အချက်အလက်.video}
 
   ## Screenshot
   ${အချက်အလက်.screenshot}
