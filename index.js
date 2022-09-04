@@ -2,6 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -59,14 +60,37 @@ const questions = [
     },
   },
   {
-    type: "input",
+    type: "checkbox",
     name: "feature",
     message: "Would you like to add feature of this project?",
+    choices: [
+      "Asynchronous and Event Driven",
+      "Very fast data streaming",
+      "Single Threaded but Highly Scalable",
+      "No Buffering",
+      "License",
+      "Quick execution of code",
+      "Cross-platform compatibility",
+      "Uses javaScript",
+    ],
+  },
+  {
+    type: "input",
+    name: "installation",
+    message: "Add steps for installation (Required)",
+    validate: (စာရိုက်ပါ) => {
+      if (စာရိုက်ပါ) {
+        return true;
+      } else {
+        console.log("You need to add steps for installation!");
+        return false;
+      }
+    },
   },
   {
     type: "input",
     name: "video",
-    message: "Add your youtube video link here!",
+    message: "Add your video link here!",
   },
   {
     type: "checkbox",
@@ -79,42 +103,45 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(အချက်အလက်) {
-  console.log(အချက်အလက်);
+function writeToFile(fileName, fileTxt) {
+  // console.log(အချက်အလက်);
 
-  let language = "";
-  if (အချက်အလက်.languages) {
-    အချက်အလက်.languages.forEach(function (value, index) {
-      let number = Number(index) + 1;
-      language += number + ". " + value + "<br>";
-    });
-  }
+  // let language = "";
+  // if (အချက်အလက်.languages) {
+  //   အချက်အလက်.languages.forEach(function (value, index) {
+  //     let number = Number(index) + 1;
+  //     language += number + ". " + value + "<br>";
+  //   });
+  // }
 
-  let fileTxt = `
+  // let fileTxt = `
 
-  # Title
-  ${အချက်အလက်.title}
+  // # Title
+  // ${အချက်အလက်.title}
 
-  ## Description
-  ${အချက်အလက်.description}
+  // ## Description
+  // ${အချက်အလက်.description}
 
-  ## Languages
-  ${language}
+  // ## Languages
+  // ${အချက်အလက်.language}
 
-  ## Link
-  ${အချက်အလက်.link}
+  // ## Link
+  // ${အချက်အလက်.link}
 
-  ## Feature
-  ${အချက်အလက်.feature}
+  // ## Feature
+  // ${အချက်အလက်.feature}
 
-  ## Walk-Through
-  [![Click this link to watch video]](${အချက်အလက်.video})
+  // ## Installation
+  // ${အချက်အလက်.installation}
 
-  ## Screenshot
-  ${အချက်အလက်.screenshot}
-  `;
+  // ## Walk-Through
+  // [![Click this link to watch video]](${အချက်အလက်.video})
 
-  fs.writeFile(`./readme/${အချက်အလက်.title}.md`, fileTxt, function (err) {
+  // ## Screenshot
+  // ${အချက်အလက်.screenshot}
+  // `;
+
+  fs.writeFile(fileName, fileTxt, function (err) {
     if (err) {
       console.log(err);
       throw err;
@@ -125,14 +152,10 @@ function writeToFile(အချက်အလက်) {
 }
 
 const promptQuestions = () => {
-  return (
-    inquirer
-      .prompt(questions)
-      .then((data) => {
-        console.log(data);
-        writeToFile(data);
-      })
-  );
+  return inquirer.prompt(questions).then((data) => {
+    console.log(data);
+    writeToFile(`./dist/${data.title}.md`, generateMarkdown({ ...data }));
+  });
 };
 
 // TODO: Create a function to initialize app
