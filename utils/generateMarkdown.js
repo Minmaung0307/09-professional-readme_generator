@@ -21,7 +21,7 @@ function generateMarkdown(အချက်အလက်) {
   ## Languages
   ${အချက်အလက်.language}
 
-  ## Link
+  ## Github Link / URL
   ${အချက်အလက်.link}
 
   ## Feature
